@@ -4,20 +4,32 @@
   <meta charset="UTF-8">
   <title>Helan Osman – Software Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #1e293b;
+      --text: #e5e7eb;
+      --text-soft: #94a3b8;
+      --accent: #38bdf8;
+      --border: #334155;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
     header {
-      background: #1e293b;
+      background: var(--bg-soft);
       padding: 15px;
       position: sticky;
       top: 0;
+      border-bottom: 1px solid #1f2937;
+      z-index: 10;
     }
 
     nav a {
@@ -26,54 +38,84 @@
       margin-right: 15px;
       font-size: 16px;
     }
-
     nav a:hover {
       color: white;
     }
 
     .container {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 980px;
+      margin: 40px auto;
       padding: 20px;
     }
 
     .hero {
       display: flex;
-      gap: 30px;
+      gap: 40px;
       align-items: center;
       flex-wrap: wrap;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      padding: 28px;
+      border-radius: 16px;
     }
 
     .hero img {
       width: 230px;
-      border-radius: 12px;
+      border-radius: 14px;
       border: 3px solid #1e40af;
     }
 
     h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      color: var(--text-soft);
+      margin-bottom: 16px;
     }
 
     .skills span {
       display: inline-block;
-      background: #1e293b;
+      background: var(--bg-soft);
       padding: 6px 12px;
       border-radius: 6px;
       margin: 4px;
       font-size: 14px;
-      border: 1px solid #334155;
+      border: 1px solid var(--border);
+    }
+
+    /* Kontakt sektion */
+    .contact-box {
+      margin-top: 25px;
+      padding: 16px;
+      background: var(--bg-soft);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-size: 15px;
+    }
+
+    .contact-box a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
     }
 
     footer {
       text-align: center;
       margin-top: 40px;
       padding: 20px;
-      background: #1e293b;
-      color: #94a3b8;
+      background: var(--bg-soft);
+      color: var(--text-soft);
+      border-top: 1px solid #1f2937;
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -91,7 +133,11 @@
 
     <div>
       <h1>Hej, jeg er Helan 👋</h1>
-      <p>Softwareudvikler med fokus på Android, web, backend og IoT.</p>
+
+      <p class="subtitle">
+        Softwareudvikler med fokus på <strong>Android</strong>, <strong>web</strong>, <strong>backend</strong> og <strong>IoT</strong>.
+        Jeg brænder for at bygge løsninger, der gør en forskel for mennesker og virksomheder.
+      </p>
 
       <div class="skills">
         <span>Kotlin</span>
@@ -103,9 +149,18 @@
         <span>IoT · MQTT</span>
       </div>
 
-      <p style="margin-top: 20px;">
-        <a href="Helan_Osman_CV.pdf" style="color:#93c5fd;">Download CV</a>
+      <p style="margin-top: 22px;">
+        <a href="Helan_Osman_CV.pdf" style="color:#93c5fd; font-size:16px;">📄 Download CV</a>
       </p>
+
+      <div class="contact-box">
+        <strong>📬 Kontakt mig</strong><br>
+        <span>E-mail: </span><a href="mailto:helanosman2018@gmail.com">helanosman2018@gmail.com</a><br>
+        <span>LinkedIn: </span><a href="https://www.linkedin.com/in/helan-osman-6b1342223/" target="_blank">
+          linkedin.com/in/helan-osman
+        </a>
+      </div>
+
     </div>
   </div>
 
