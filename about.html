@@ -6,24 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #0f172a;
+      --card: #111827;
+      --border: #1f2937;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.15);
+      --text: #e5e7eb;
+      --text-soft: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #0f172a;
-      color: #e5e7eb;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #020617 100%);
+      color: var(--text);
       font-family: Arial, sans-serif;
       line-height: 1.6;
     }
 
     header {
-      background: #1e293b;
+      background: rgba(15,23,42,0.96);
       padding: 15px;
+      border-bottom: 1px solid #1f2937;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
     }
 
     nav a {
       color: #93c5fd;
       margin-right: 15px;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     nav a:hover {
@@ -31,50 +51,135 @@
     }
 
     .container {
-      max-width: 950px;
-      margin: 20px auto;
-      padding: 20px;
+      max-width: 980px;
+      margin: 24px auto 40px;
+      padding: 0 20px 20px;
     }
 
     h1 {
       font-size: 32px;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
 
     h2 {
-      font-size: 24px;
-      margin-top: 25px;
-      margin-bottom: 8px;
+      font-size: 22px;
+      margin-top: 22px;
+      margin-bottom: 6px;
     }
 
-    /* Layout med billede + tekst */
-    .about-section {
+    p {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    /* Hero sektion med billede + tekst */
+    .hero {
       display: flex;
       flex-wrap: wrap;
-      gap: 25px;
+      gap: 22px;
       align-items: flex-start;
+      background: var(--bg-soft);
+      border-radius: 16px;
+      padding: 18px 18px 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 45px rgba(15,23,42,0.7);
     }
 
-    .about-section img {
-      width: 260px;
+    .hero-photo-wrap {
+      flex: 0 0 auto;
+    }
+
+    .hero-photo-card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      border: 1px solid #1f2937;
+      text-align: center;
+    }
+
+    .hero-photo-card img {
+      width: 170px;              /* mindre billede */
+      height: auto;
+      border-radius: 12px;
+      border: 3px solid #1d4ed8;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 8px;
+    }
+
+    .hero-photo-card .name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .hero-photo-card .role {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .hero-text {
+      flex: 1 1 260px;
+      min-width: 0;
+    }
+
+    .hero-badges {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11px;
+    }
+
+    .badge {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.8);
+      color: var(--text-soft);
+    }
+
+    .badge-accent {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .hero-intro {
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .section-card {
+      margin-top: 20px;
+      background: var(--bg-soft);
       border-radius: 14px;
-      border: 3px solid #1e40af;
-      flex-shrink: 0;
-    }
-
-    .about-text {
-      flex: 1;
-      min-width: 260px;
+      padding: 16px 18px 18px;
+      border: 1px solid var(--border);
     }
 
     ul {
       padding-left: 20px;
+      margin-top: 6px;
+      margin-bottom: 4px;
     }
 
-    .divider {
-      height: 1px;
-      background: #1f2937;
-      margin: 25px 0;
+    li {
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .muted {
+      color: var(--text-soft);
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 14px 14px 16px;
+      }
+      .hero-photo-card img {
+        width: 150px;
+      }
     }
   </style>
 </head>
@@ -93,57 +198,83 @@
 
   <h1>Om mig</h1>
 
-  <!-- Billede + tekst side om side -->
-  <div class="about-section">
-    
-    <img src="images/helan.jpg" alt="Helan Osman">
-
-    <div class="about-text">
-      <p>
-        Jeg er diplomingeniør i Sundhedsteknologi og arbejder som softwareudvikler med fokus på Android,
-        web, backend og IoT. Jeg brænder for at udvikle digitale løsninger, der gør hverdagen lettere for brugerne —
-        især inden for sundhed, service og kommunikation.
-      </p>
-
-      <p>
-        I mine projekter arbejder jeg struktureret, løsningsorienteret og med stor nysgerrighed. Jeg elsker at lære
-        nye teknologier, bygge funktionelle systemer og forbedre brugeroplevelsen gennem design og logik.
-      </p>
+  <!-- HERO med billede + kort intro -->
+  <section class="hero">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-card">
+        <img src="images/helan.jpg" alt="Helan Osman">
+        <div class="name">Helan Osman</div>
+        <div class="role">Software Developer</div>
+      </div>
     </div>
 
-  </div>
+    <div class="hero-text">
+      <p class="hero-intro">
+        Jeg er diplomingeniør i Sundhedsteknologi og arbejder som softwareudvikler med fokus på
+        Android, web, backend og IoT. Jeg brænder for at bygge løsninger, der er både teknisk
+        solide og lette at bruge i praksis – især inden for sundhed, service og digitale værktøjer
+        til hverdagen.
+      </p>
 
-  <div class="divider"></div>
+      <p class="hero-intro">
+        I projekter trives jeg med at kombinere struktur, nysgerrighed og samarbejde.
+        Jeg kan godt lide at tage ansvar, fordybe mig i komplekse problemer og samtidig have
+        øje for detaljer i brugeroplevelsen.
+      </p>
 
-  <h2>Mine styrker</h2>
-  <ul>
-    <li>Kotlin & Android (Jetpack Compose)</li>
-    <li>React & JavaScript</li>
-    <li>.NET backend og API-udvikling</li>
-    <li>Firebase, Firestore & Cloud Services</li>
-    <li>IoT (MQTT, EMQX, Raspberry Pi)</li>
-  </ul>
+      <div class="hero-badges">
+        <span class="badge badge-accent">Kotlin · Android · Jetpack Compose</span>
+        <span class="badge">Firebase · Firestore · FCM</span>
+        <span class="badge">React · JavaScript</span>
+        <span class="badge">.NET · API’er</span>
+        <span class="badge">IoT · MQTT · EMQX</span>
+      </div>
+    </div>
+  </section>
 
-  <div class="divider"></div>
+  <!-- TEKNISKE STYRKER -->
+  <section class="section-card">
+    <h2>Mine styrker som udvikler</h2>
+    <p class="muted">
+      Jeg arbejder både med mobile apps, web og backend, og er vant til at tænke i hele løsninger –
+      fra brugerens behov til databasen.
+    </p>
 
-  <h2>Lidt om mig som person</h2>
+    <ul>
+      <li><strong>Kotlin & Android (Jetpack Compose)</strong> – moderne, komponentbaseret UI og MVVM-arkitektur.</li>
+      <li><strong>React & JavaScript</strong> – simple og intuitive webinterfaces med fokus på brugervenlighed.</li>
+      <li><strong>.NET backend</strong> – udvikling af API’er og integration mellem systemer.</li>
+      <li><strong>Firebase & Firestore</strong> – autentificering, real-time data og cloud-løsninger.</li>
+      <li><strong>IoT (MQTT, EMQX, Raspberry Pi)</strong> – datastreams fra devices, brokers og visualisering.</li>
+    </ul>
+  </section>
 
-  <p>
-    Udover softwareudvikling har jeg mange interesser, der hjælper mig med at holde mig kreativ,
-    afslappet og inspireret. Jeg elsker at fordybe mig i nye projekter — både tekniske og kreative.
-  </p>
+  <!-- PERSONLIG DEL & FRITID -->
+  <section class="section-card">
+    <h2>Lidt om mig som person</h2>
+    <p>
+      Jeg er rolig, ansvarsfuld og meget nysgerrig. Jeg kan godt lide at forstå,
+      hvorfor ting fungerer som de gør – både teknisk og menneskeligt.
+      I samarbejde sætter jeg pris på ærlig kommunikation, sparring og et miljø,
+      hvor man gerne må stille spørgsmål og lære af hinanden.
+    </p>
 
-  <h2>Mine fritidsinteresser</h2>
-  <ul>
-    <li><strong>Spille brætspil</strong> – jeg elsker strategi, teamwork og hyggelige aftener med familie og venner.</li>
-    <li><strong>Gå ture</strong> – naturen giver mig ro og nye idéer.</li>
-    <li><strong>Læse bøger</strong> – især personlige historier, fagbøger og selvudvikling.</li>
-    <li><strong>Lave mad og desserter</strong> – jeg elsker at være kreativ i køkkenet og prøve nye opskrifter.</li>
-  </ul>
+    <h2>Mine fritidsinteresser</h2>
+    <p class="muted">
+      I min fritid laver jeg ting, der giver mig energi og kreativitet – både socialt og alene:
+    </p>
 
-  <p>
-    Jeg tror på at udvikling – både personlig og faglig – sker, når man er nysgerrig, kreativ og åben for nye udfordringer.
-  </p>
+    <ul>
+      <li><strong>Brætspil</strong> – jeg elsker strategi, samarbejde og hygge med familie og venner.</li>
+      <li><strong>Gåture</strong> – især når jeg skal rydde hovedet og få nye idéer.</li>
+      <li><strong>Læse bøger</strong> – alt fra personlige historier til fagbøger og selvudvikling.</li>
+      <li><strong>Lave mad og desserter</strong> – jeg kan godt lide at eksperimentere i køkkenet og forkæle andre.</li>
+    </ul>
+
+    <p>
+      Kombinationen af det tekniske og det kreative passer mig rigtig godt – både i kode og i hverdagen.
+    </p>
+  </section>
 
 </div>
 
