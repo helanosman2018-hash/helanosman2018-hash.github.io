@@ -18,7 +18,6 @@
       padding: 15px;
       position: sticky;
       top: 0;
-      z-index: 10;
     }
 
     nav a {
@@ -33,7 +32,7 @@
     }
 
     .container {
-      max-width: 980px;
+      max-width: 900px;
       margin: 20px auto 40px;
       padding: 20px;
     }
@@ -44,61 +43,44 @@
     }
 
     h2 {
-      margin-top: 0;
-      margin-bottom: 5px;
       font-size: 22px;
+      margin-bottom: 5px;
     }
 
-    .project-card {
+    .project {
       background: #111827;
-      padding: 18px;
-      border-radius: 12px;
-      margin-bottom: 25px;
       border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 20px;
     }
 
-    .project-meta {
+    .meta {
       font-size: 14px;
       color: #9ca3af;
-      margin-bottom: 10px;
       font-style: italic;
+      margin-bottom: 8px;
     }
 
-    .screenshot {
+    img {
       width: 100%;
-      border-radius: 10px;
-      margin: 8px 0 12px;
+      border-radius: 8px;
       border: 1px solid #334155;
-      background: #0b1120;
-      object-fit: cover;
-      max-height: 380px;
+      margin: 10px 0;
     }
 
     iframe {
       width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
+      height: 315px;
+      border-radius: 8px;
       border: 1px solid #334155;
+      margin-top: 10px;
     }
 
     ul {
       padding-left: 18px;
       margin-top: 6px;
       margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 16px;
-      margin-top: 10px;
-      margin-bottom: 4px;
-      font-weight: bold;
-    }
-
-    .divider {
-      height: 1px;
-      background: #1f2937;
-      margin: 14px 0;
-      border-radius: 999px;
     }
   </style>
 </head>
@@ -113,52 +95,34 @@
 </header>
 
 <div class="container">
-
   <h1>Mine projekter</h1>
   <p>
     Her kan du se de vigtigste projekter, jeg har lavet inden for Android, web, backend og IoT.
     Jeg har både arbejdet med arkitektur, kode, UI/UX og integration til cloud-tjenester.
   </p>
 
-  <!-- PROJEKT 1: TolkCare -->
-  <div class="project-card">
+  <!-- TOLKCARE -->
+  <div class="project">
     <h2>TolkCare App</h2>
-    <div class="project-meta">
-      Android · Kotlin · Jetpack Compose · Firebase · Firestore · FCM · Agora (voice/video)
-    </div>
-
-    <!-- Dit store TolkCare-billede -->
-    <img class="screenshot" src="images/tolkcare.png" alt="TolkCare App oversigt">
+    <p class="meta">Android · Kotlin · Jetpack Compose · Firebase · Firestore · FCM · Agora</p>
 
     <p>
-      TolkCare er en Android-app til booking af tolke, hvor både brugere og tolke har deres egne flows.
-      Brugeren kan finde og booke en tolk, vælge dato og tidspunkt, se sine bookinger og aflyse igen.
-      Tolken kan registrere arbejdstider, se kommende bookinger og bliver notificeret, når en ny booking kommer.
+      TolkCare er en Android-app til booking af tolke. Brugere kan finde tolke, vælge dato og tidspunkt,
+      se deres bookinger og aflyse igen. Tolken kan registrere arbejdstider, se bookinger og få
+      notifikationer, når nye bookinger oprettes.
     </p>
 
-    <div class="section-title">Mit ansvar</div>
     <ul>
-      <li>Design og udvikling af hele appen i Kotlin med Jetpack Compose.</li>
-      <li>Opsætning af Firebase Authentication til login og brugerhåndtering.</li>
-      <li>Datamodel i Firestore til tolke, brugere, arbejdstider, bookinger og evalueringer.</li>
-      <li>Implementering af push-notifikationer med FCM, så tolken får besked ved nye bookinger.</li>
-      <li>Integration af Agora SDK til voice/video-calls mellem bruger og tolk.</li>
-      <li>Logik til at håndtere sletning af booking, gendannelse af ledige tider og favorit-tolke.</li>
+      <li>UI bygget med Jetpack Compose.</li>
+      <li>Firebase Authentication til login og brugerhåndtering.</li>
+      <li>Firestore til lagring af brugere, tolke, arbejdstider og bookinger.</li>
+      <li>Push-notifikationer med FCM til tolken ved nye bookinger.</li>
+      <li>Voice/video-calls mellem bruger og tolk via Agora SDK.</li>
     </ul>
 
-    <div class="section-title">Tekniske pointer</div>
-    <ul>
-      <li>MVVM-arkitektur med ViewModels og repository-lag.</li>
-      <li>Compose-navigation mellem skærme (login, kalender, detaljer, call osv.).</li>
-      <li>Firestore-subcollections til at knytte arbejdstider og bookinger til tolke.</li>
-      <li>Brug af FCM HTTP v1 API for at sende målrettede notifikationer til en specifik tolks enhed.</li>
-    </ul>
+    <img src="images/tolkcare.png" alt="TolkCare app flow">
 
-    <div class="divider"></div>
-
-    <div class="section-title">Video-demo</div>
     <iframe
-      height="315"
       src="https://www.youtube.com/embed/83v2FE1zai0"
       title="TolkCare Demo"
       frameborder="0"
@@ -167,44 +131,27 @@
     </iframe>
   </div>
 
-  <!-- PROJEKT 2: IoT Waste Management -->
-  <div class="project-card">
-    <h2>IoT Waste Management System</h2>
-    <div class="project-meta">
-      IoT · MQTT · EMQX · .NET · Android/visualisering · Firestore
-    </div>
-
-    <!-- Dit store Waste-billede -->
-    <img class="screenshot" src="images/waste.png" alt="IoT Waste Management diagram">
+  <!-- WASTE -->
+  <div class="project">
+    <h2>IoT Waste Management</h2>
+    <p class="meta">MQTT · EMQX · .NET · Firestore · IoT</p>
 
     <p>
-      IoT Waste Management System er et smart affaldssystem, der måler fyldningsniveau i affaldsbeholdere
-      og sender data til en central platform. Målet er at optimere ruter, så skraldespande kun tømmes,
-      når de reelt trænger, og dermed spare både tid og ressourcer.
+      IoT Waste Management er et smart affaldssystem, som overvåger fyldningsniveau i skraldespande.
+      Sensor-data sendes via MQTT til en EMQX-broker og videre til backend, hvor data gemmes
+      og bruges til at optimere tømmeruter.
     </p>
 
-    <div class="section-title">Mit ansvar</div>
     <ul>
-      <li>Design af arkitekturen mellem MQTT-clients, EMQX-broker og backend.</li>
-      <li>Udvikling af fake datagenerator (C#/.NET) som sender afstand og GPS-data til EMQX.</li>
-      <li>Opsætning af EMQX MQTT-broker i Docker og test af publish/subscribe-flows.</li>
-      <li>Udvikling af backend, der modtager data og gemmer dem i database/Firestore.</li>
-      <li>Visualisering af fyldningsniveauer og alerts i en app/dashbord.</li>
+      <li>Fake datagenerator der sender afstand og GPS-data via MQTT.</li>
+      <li>EMQX broker (Docker) til publish/subscribe af sensordata.</li>
+      <li>.NET backend der modtager og gemmer data.</li>
+      <li>Visualisering af fyldningsniveauer og alarmer.</li>
     </ul>
 
-    <div class="section-title">Tekniske pointer</div>
-    <ul>
-      <li>MQTT topics til hver skraldespand (fx <code>bins/{id}/level</code> og <code>bins/{id}/location</code>).</li>
-      <li>EMQX som broker med klienter både fra fake generator og fra appen.</li>
-      <li>.NET backend til at transformere og gemme data, samt eksponere API-endpoints.</li>
-      <li>Logik til at udløse alerts, når fyldningsniveau overstiger fx 80%.</li>
-    </ul>
+    <img src="images/waste.png" alt="IoT Waste Management diagram">
 
-    <div class="divider"></div>
-
-    <div class="section-title">Video-demo</div>
     <iframe
-      height="315"
       src="https://www.youtube.com/embed/5vvruHKEwWw"
       title="IoT Waste Management Demo"
       frameborder="0"
@@ -212,31 +159,6 @@
       allowfullscreen>
     </iframe>
   </div>
-
-  <!-- PROJEKT 3: Web- og frontendprojekter (valgfrit billede) -->
-  <div class="project-card">
-    <h2>Web- og frontendprojekter</h2>
-    <div class="project-meta">
-      React · JavaScript · HTML · CSS
-    </div>
-
-    <p>
-      Jeg har også arbejdet med mindre webprojekter, hvor fokus har været på at skabe simple, men
-      brugervenlige interfaces og forstå komponent-baseret udvikling i React.
-    </p>
-
-    <div class="section-title">Eksempler</div>
-    <ul>
-      <li>Login-side med validering og kald til backend API.</li>
-      <li>Dashboard med visning af data fra REST API’er.</li>
-      <li>Responsivt layout med Flexbox og CSS Grid.</li>
-      <li>Forbedring af eksisterende sider hos virksomheder (UI og struktur).</li>
-    </ul>
-
-    <!-- Hvis du har et billede: images/webproject.png -->
-    <!-- Ellers kan du slette denne linje -->
-  </div>
-
 </div>
 
 </body>
