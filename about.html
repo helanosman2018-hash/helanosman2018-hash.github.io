@@ -4,15 +4,81 @@
   <meta charset="UTF-8">
   <title>Om mig – Helan Osman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body { margin:0; background:#0f172a; color:#e5e7eb; font-family:Arial; }
-    header { background:#1e293b; padding:15px; }
-    nav a { color:#93c5fd; margin-right:15px; text-decoration:none; }
-    .container { max-width:800px; margin:20px auto; padding:20px; }
-    h1 { font-size:28px; }
-    img { width:220px; border-radius:12px; border:3px solid #1e40af; }
+    body {
+      margin: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1e293b;
+      padding: 15px;
+    }
+
+    nav a {
+      color: #93c5fd;
+      margin-right: 15px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
+    /* Layout med billede + tekst */
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      align-items: flex-start;
+    }
+
+    .about-section img {
+      width: 260px;
+      border-radius: 14px;
+      border: 3px solid #1e40af;
+      flex-shrink: 0;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #1f2937;
+      margin: 25px 0;
+    }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -27,24 +93,59 @@
 
   <h1>Om mig</h1>
 
-  <img src="images/helan.jpg" alt="Helan">
+  <!-- Billede + tekst side om side -->
+  <div class="about-section">
+    
+    <img src="images/helan.jpg" alt="Helan Osman">
 
-  <p>
-    Jeg er diplomingeniør i Sundhedsteknologi og arbejder som softwareudvikler med erfaring inden for Android,
-    web, backend og IoT-systemer.
-  </p>
+    <div class="about-text">
+      <p>
+        Jeg er diplomingeniør i Sundhedsteknologi og arbejder som softwareudvikler med fokus på Android,
+        web, backend og IoT. Jeg brænder for at udvikle digitale løsninger, der gør hverdagen lettere for brugerne —
+        især inden for sundhed, service og kommunikation.
+      </p>
+
+      <p>
+        I mine projekter arbejder jeg struktureret, løsningsorienteret og med stor nysgerrighed. Jeg elsker at lære
+        nye teknologier, bygge funktionelle systemer og forbedre brugeroplevelsen gennem design og logik.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
 
   <h2>Mine styrker</h2>
   <ul>
     <li>Kotlin & Android (Jetpack Compose)</li>
     <li>React & JavaScript</li>
-    <li>.NET backend</li>
-    <li>Firebase & Firestore</li>
+    <li>.NET backend og API-udvikling</li>
+    <li>Firebase, Firestore & Cloud Services</li>
     <li>IoT (MQTT, EMQX, Raspberry Pi)</li>
   </ul>
+
+  <div class="divider"></div>
+
+  <h2>Lidt om mig som person</h2>
+
+  <p>
+    Udover softwareudvikling har jeg mange interesser, der hjælper mig med at holde mig kreativ,
+    afslappet og inspireret. Jeg elsker at fordybe mig i nye projekter — både tekniske og kreative.
+  </p>
+
+  <h2>Mine fritidsinteresser</h2>
+  <ul>
+    <li><strong>Spille brætspil</strong> – jeg elsker strategi, teamwork og hyggelige aftener med familie og venner.</li>
+    <li><strong>Gå ture</strong> – naturen giver mig ro og nye idéer.</li>
+    <li><strong>Læse bøger</strong> – især personlige historier, fagbøger og selvudvikling.</li>
+    <li><strong>Lave mad og desserter</strong> – jeg elsker at være kreativ i køkkenet og prøve nye opskrifter.</li>
+  </ul>
+
+  <p>
+    Jeg tror på at udvikling – både personlig og faglig – sker, når man er nysgerrig, kreativ og åben for nye udfordringer.
+  </p>
 
 </div>
 
 </body>
 </html>
-
