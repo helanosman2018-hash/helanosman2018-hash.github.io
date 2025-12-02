@@ -173,6 +173,56 @@
       font-size: 14px;
     }
 
+    /* Timeline styling */
+    .timeline {
+      position: relative;
+      margin-top: 12px;
+      padding-left: 18px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #1f2937;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 14px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(56,189,248,0.2);
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .timeline-meta {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 2px;
+    }
+
+    .timeline-desc {
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
     @media (max-width: 700px) {
       .hero {
         padding: 14px 14px 16px;
@@ -274,6 +324,59 @@
     <p>
       Kombinationen af det tekniske og det kreative passer mig rigtig godt – både i kode og i hverdagen.
     </p>
+  </section>
+
+  <!-- TIMELINE FOR UDDANNELSE & ERFARING -->
+  <section class="section-card">
+    <h2>Uddannelse & erfaring</h2>
+    <p class="muted">
+      Et kort overblik over min rejse som udvikler. (Du kan tilpasse årstal og måneder, hvis noget ændrer sig.)
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">2024 – 2025 · Aarhus / Hornslet</div>
+        <div class="timeline-title">Softwareudvikler – Studiemedhjælper</div>
+        <div class="timeline-desc">
+          Chromaviso A/S – arbejdet med software til avancerede lysstyringssystemer
+          på hospitaler og plejehjem. Fokus på udvikling, test og forbedring af eksisterende løsninger.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">2023 – 2024 · Aarhus</div>
+        <div class="timeline-title">Softwareudvikler – Praktikant</div>
+        <div class="timeline-desc">
+          Chromaviso A/S – udvikling af intern test-software, fejlsøgning, unit tests
+          og kvalitetssikring, så nye versioner var stabile før levering til kunder.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">2025 · Aarhus</div>
+        <div class="timeline-title">Frontendudvikler – Praktikant</div>
+        <div class="timeline-desc">
+          EventSelfie – arbejde med forbedring af hjemmeside, UI-justeringer, test
+          og teknisk support til kunder. Fokus på frontend og brugeroplevelse.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">2021 – 2025 · Aarhus Universitet</div>
+        <div class="timeline-title">Diplomingeniør i Sundhedsteknologi</div>
+        <div class="timeline-desc">
+          Uddannelse med fokus på sundhedsteknologi, software, elektronik og
+          brugercentrerede løsninger. Afsluttende projekter bl.a. TolkCare App og
+          IoT Waste Management System.
+        </div>
+      </div>
+
+    </div>
   </section>
 
 </div>
