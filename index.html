@@ -12,6 +12,7 @@
       --text: #e5e7eb;
       --text-soft: #94a3b8;
       --accent: #38bdf8;
+      --accent-hover: #0ea5e9;
       --border: #334155;
     }
 
@@ -48,52 +49,113 @@
       padding: 20px;
     }
 
+    /* HERO */
     .hero {
       display: flex;
-      gap: 40px;
+      gap: 30px;
       align-items: center;
       flex-wrap: wrap;
-      background: rgba(255,255,255,0.02);
+      background: rgba(15,23,42,0.95);
       border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 16px;
+      padding: 26px 26px 24px;
+      border-radius: 18px;
+      box-shadow: 0 20px 45px rgba(15,23,42,0.8);
     }
 
-    .hero img {
-      width: 230px;
-      border-radius: 14px;
-      border: 3px solid #1e40af;
+    .hero-left {
+      flex: 0 0 auto;
+      text-align: center;
+    }
+
+    .hero-left img {
+      width: 140px;           /* mindre billede */
+      height: 140px;
+      border-radius: 50%;     /* cirkel */
+      border: 3px solid #1d4ed8;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .hero-left .name {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .hero-left .role {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .hero-right {
+      flex: 1 1 260px;
+      min-width: 0;
     }
 
     h1 {
-      font-size: 34px;
-      margin-bottom: 8px;
+      font-size: 30px;
+      margin-bottom: 6px;
     }
 
     .subtitle {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--text-soft);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+    }
+
+    .skills {
+      margin-bottom: 18px;
     }
 
     .skills span {
       display: inline-block;
       background: var(--bg-soft);
       padding: 6px 12px;
-      border-radius: 6px;
-      margin: 4px;
-      font-size: 14px;
+      border-radius: 999px;
+      margin: 3px;
+      font-size: 13px;
       border: 1px solid var(--border);
     }
 
-    /* Kontakt sektion */
+    /* CV-knap */
+    .cv-button {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #0b1120;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cv-button:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Kontaktboks */
     .contact-box {
-      margin-top: 25px;
-      padding: 16px;
-      background: var(--bg-soft);
+      margin-top: 18px;
+      padding: 14px 16px;
+      background: #020617;
       border-radius: 12px;
       border: 1px solid var(--border);
-      font-size: 15px;
+      font-size: 14px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .contact-row span.icon {
+      width: 20px;
+      text-align: center;
     }
 
     .contact-box a {
@@ -128,41 +190,60 @@
 
 <div class="container">
 
-  <div class="hero">
-    <img src="images/helan.jpg" alt="Helan Osman">
+  <section class="hero">
 
-    <div>
+    <!-- Venstre: lille rundt billede + navn -->
+    <div class="hero-left">
+      <img src="images/helan.jpg" alt="Helan Osman">
+      <div class="name">Helan Osman</div>
+      <div class="role">Software Developer</div>
+    </div>
+
+    <!-- Højre: intro, skills, kontakt -->
+    <div class="hero-right">
       <h1>Hej, jeg er Helan 👋</h1>
 
       <p class="subtitle">
-        Softwareudvikler med fokus på <strong>Android</strong>, <strong>web</strong>, <strong>backend</strong> og <strong>IoT</strong>.
-        Jeg brænder for at bygge løsninger, der gør en forskel for mennesker og virksomheder.
+        Diplomingeniør i Sundhedsteknologi og softwareudvikler med fokus på
+        <strong>Android</strong>, <strong>web</strong>, <strong>backend</strong> og <strong>IoT</strong>.
+        Jeg er aktivt på udkig efter et job som softwareudvikler, hvor jeg kan udvikle moderne
+        løsninger og samtidig lære endnu mere.
       </p>
 
       <div class="skills">
-        <span>Kotlin</span>
+        <span>Kotlin · Android</span>
         <span>Jetpack Compose</span>
-        <span>React</span>
         <span>.NET</span>
-        <span>Firebase</span>
+        <span>React</span>
+        <span>Firebase · Firestore</span>
         <span>SQL</span>
-        <span>IoT · MQTT</span>
+        <span>IoT · MQTT · EMQX</span>
       </div>
 
-      <p style="margin-top: 22px;">
-        <a href="Helan_Osman_CV.pdf" style="color:#93c5fd; font-size:16px;">📄 Download CV</a>
-      </p>
+      <a href="Helan_Osman_CV.pdf" class="cv-button">📄 Download CV</a>
 
       <div class="contact-box">
-        <strong>📬 Kontakt mig</strong><br>
-        <span>E-mail: </span><a href="mailto:helanosman2018@gmail.com">helanosman2018@gmail.com</a><br>
-        <span>LinkedIn: </span><a href="https://www.linkedin.com/in/helan-osman-6b1342223/" target="_blank">
-          linkedin.com/in/helan-osman
-        </a>
+        <div class="contact-row">
+          <span class="icon">📞</span>
+          <!-- 🔁 SKIFT NUMMERET HER TIL DIT EGET -->
+          <span><a href="tel:+4512345678">+45 12 34 56 78</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="icon">✉️</span>
+          <span><a href="mailto:helanosman2018@gmail.com">helanosman2018@gmail.com</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="icon">🔗</span>
+          <span>
+            <a href="https://www.linkedin.com/in/helan-osman-6b1342223/" target="_blank">
+              linkedin.com/in/helan-osman
+            </a>
+          </span>
+        </div>
       </div>
-
     </div>
-  </div>
+
+  </section>
 
 </div>
 
