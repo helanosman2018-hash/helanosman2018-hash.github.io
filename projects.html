@@ -117,4 +117,127 @@
   <h1>Mine projekter</h1>
   <p>
     Her kan du se de vigtigste projekter, jeg har lavet inden for Android, web, backend og IoT.
-    Jeg har både arbejdet med arkitektur, kode, UI/UX og integration til cloud-tjenes
+    Jeg har både arbejdet med arkitektur, kode, UI/UX og integration til cloud-tjenester.
+  </p>
+
+  <!-- PROJEKT 1: TolkCare -->
+  <div class="project-card">
+    <h2>TolkCare App</h2>
+    <div class="project-meta">
+      Android · Kotlin · Jetpack Compose · Firebase · Firestore · FCM · Agora (voice/video)
+    </div>
+
+    <!-- Dit store TolkCare-billede -->
+    <img class="screenshot" src="images/tolkcare.png" alt="TolkCare App oversigt">
+
+    <p>
+      TolkCare er en Android-app til booking af tolke, hvor både brugere og tolke har deres egne flows.
+      Brugeren kan finde og booke en tolk, vælge dato og tidspunkt, se sine bookinger og aflyse igen.
+      Tolken kan registrere arbejdstider, se kommende bookinger og bliver notificeret, når en ny booking kommer.
+    </p>
+
+    <div class="section-title">Mit ansvar</div>
+    <ul>
+      <li>Design og udvikling af hele appen i Kotlin med Jetpack Compose.</li>
+      <li>Opsætning af Firebase Authentication til login og brugerhåndtering.</li>
+      <li>Datamodel i Firestore til tolke, brugere, arbejdstider, bookinger og evalueringer.</li>
+      <li>Implementering af push-notifikationer med FCM, så tolken får besked ved nye bookinger.</li>
+      <li>Integration af Agora SDK til voice/video-calls mellem bruger og tolk.</li>
+      <li>Logik til at håndtere sletning af booking, gendannelse af ledige tider og favorit-tolke.</li>
+    </ul>
+
+    <div class="section-title">Tekniske pointer</div>
+    <ul>
+      <li>MVVM-arkitektur med ViewModels og repository-lag.</li>
+      <li>Compose-navigation mellem skærme (login, kalender, detaljer, call osv.).</li>
+      <li>Firestore-subcollections til at knytte arbejdstider og bookinger til tolke.</li>
+      <li>Brug af FCM HTTP v1 API for at sende målrettede notifikationer til en specifik tolks enhed.</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <div class="section-title">Video-demo</div>
+    <iframe
+      height="315"
+      src="https://www.youtube.com/embed/83v2FE1zai0"
+      title="TolkCare Demo"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- PROJEKT 2: IoT Waste Management -->
+  <div class="project-card">
+    <h2>IoT Waste Management System</h2>
+    <div class="project-meta">
+      IoT · MQTT · EMQX · .NET · Android/visualisering · Firestore
+    </div>
+
+    <!-- Dit store Waste-billede -->
+    <img class="screenshot" src="images/waste.png" alt="IoT Waste Management diagram">
+
+    <p>
+      IoT Waste Management System er et smart affaldssystem, der måler fyldningsniveau i affaldsbeholdere
+      og sender data til en central platform. Målet er at optimere ruter, så skraldespande kun tømmes,
+      når de reelt trænger, og dermed spare både tid og ressourcer.
+    </p>
+
+    <div class="section-title">Mit ansvar</div>
+    <ul>
+      <li>Design af arkitekturen mellem MQTT-clients, EMQX-broker og backend.</li>
+      <li>Udvikling af fake datagenerator (C#/.NET) som sender afstand og GPS-data til EMQX.</li>
+      <li>Opsætning af EMQX MQTT-broker i Docker og test af publish/subscribe-flows.</li>
+      <li>Udvikling af backend, der modtager data og gemmer dem i database/Firestore.</li>
+      <li>Visualisering af fyldningsniveauer og alerts i en app/dashbord.</li>
+    </ul>
+
+    <div class="section-title">Tekniske pointer</div>
+    <ul>
+      <li>MQTT topics til hver skraldespand (fx <code>bins/{id}/level</code> og <code>bins/{id}/location</code>).</li>
+      <li>EMQX som broker med klienter både fra fake generator og fra appen.</li>
+      <li>.NET backend til at transformere og gemme data, samt eksponere API-endpoints.</li>
+      <li>Logik til at udløse alerts, når fyldningsniveau overstiger fx 80%.</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <div class="section-title">Video-demo</div>
+    <iframe
+      height="315"
+      src="https://www.youtube.com/embed/5vvruHKEwWw"
+      title="IoT Waste Management Demo"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- PROJEKT 3: Web- og frontendprojekter (valgfrit billede) -->
+  <div class="project-card">
+    <h2>Web- og frontendprojekter</h2>
+    <div class="project-meta">
+      React · JavaScript · HTML · CSS
+    </div>
+
+    <p>
+      Jeg har også arbejdet med mindre webprojekter, hvor fokus har været på at skabe simple, men
+      brugervenlige interfaces og forstå komponent-baseret udvikling i React.
+    </p>
+
+    <div class="section-title">Eksempler</div>
+    <ul>
+      <li>Login-side med validering og kald til backend API.</li>
+      <li>Dashboard med visning af data fra REST API’er.</li>
+      <li>Responsivt layout med Flexbox og CSS Grid.</li>
+      <li>Forbedring af eksisterende sider hos virksomheder (UI og struktur).</li>
+    </ul>
+
+    <!-- Hvis du har et billede: images/webproject.png -->
+    <!-- Ellers kan du slette denne linje -->
+  </div>
+
+</div>
+
+</body>
+</html>
