@@ -33,7 +33,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 980px;
       margin: 20px auto 40px;
       padding: 20px;
     }
@@ -50,10 +50,10 @@
     }
 
     .project-card {
-      background: #1e293b;
+      background: #111827;
       padding: 18px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
       border: 1px solid #334155;
     }
 
@@ -64,11 +64,14 @@
       font-style: italic;
     }
 
-    img {
+    .screenshot {
       width: 100%;
       border-radius: 10px;
-      margin: 8px 0 10px;
+      margin: 8px 0 12px;
       border: 1px solid #334155;
+      background: #0b1120;
+      object-fit: cover;
+      max-height: 380px;
     }
 
     iframe {
@@ -85,10 +88,17 @@
     }
 
     .section-title {
-      font-size: 18px;
+      font-size: 16px;
       margin-top: 10px;
       margin-bottom: 4px;
       font-weight: bold;
+    }
+
+    .divider {
+      height: 1px;
+      background: #1f2937;
+      margin: 14px 0;
+      border-radius: 999px;
     }
   </style>
 </head>
@@ -106,123 +116,5 @@
 
   <h1>Mine projekter</h1>
   <p>
-    Her kan du se et udvalg af de projekter, jeg har arbejdet med inden for Android, backend,
-    web og IoT. Fokus har både været på funktionalitet, struktur i koden og god brugeroplevelse.
-  </p>
-
-  <!-- PROJEKT 1: TolkCare -->
-  <div class="project-card">
-    <h2>TolkCare App</h2>
-    <div class="project-meta">
-      Android · Kotlin · Jetpack Compose · Firebase · Firestore · FCM · Agora (voice/video)
-    </div>
-
-    <p>
-      TolkCare er en Android-app til booking af tolke. Brugeren kan finde en tolk, vælge tidspunkt,
-      se egne bookinger og kommunikere direkte med tolken via voice/video. Appen er bygget som
-      et komplet system med både bruger- og tolkeflows.
-    </p>
-
-    <div class="section-title">Mit ansvar</div>
-    <ul>
-      <li>Design og implementering af UI i Jetpack Compose.</li>
-      <li>Firebase Authentication til login og oprettelse af brugere.</li>
-      <li>Firestore-datamodel til brugere, tolke, arbejdstider og bookinger.</li>
-      <li>Notifikationer med FCM (tolk får besked, når en bruger laver en booking).</li>
-      <li>Integrering af Agora SDK til voice/video-samtaler mellem bruger og tolk.</li>
-      <li>Håndtering af logik til booking, sletning, favorit-tolke og kalender-visning.</li>
-    </ul>
-
-    <div class="section-title">Tekniske pointer</div>
-    <ul>
-      <li>MVVM-arkitektur med ViewModels og repository-lag.</li>
-      <li>Reaktiv UI med Jetpack Compose og state-håndtering.</li>
-      <li>Cloud Firestore-dokumentstruktur til bookings, tolk-profiler og arbejdstider.</li>
-      <li>Brug af FCM HTTP API til målrettede notifikationer til specifikke tolke-enheder.</li>
-    </ul>
-
-    <img src="images/tolkcare.png" alt="TolkCare screenshot">
-
-    <div class="section-title">Video-demo</div>
-    <iframe
-      height="315"
-      src="https://www.youtube.com/embed/83v2FE1zai0"
-      title="TolkCare Demo"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- PROJEKT 2: IoT Waste Management -->
-  <div class="project-card">
-    <h2>IoT Waste Management System</h2>
-    <div class="project-meta">
-      IoT · Raspberry Pi · MQTT · EMQX · .NET backend · Android/visualisering · Firestore
-    </div>
-
-    <p>
-      IoT Waste Management System er et smart affaldssystem, der overvåger fyldningsniveauet
-      i skraldespande. Tanken er at optimere tømmeruter, så skraldespande kun tømmes, når det er nødvendigt.
-      Systemet kombinerer sensordata, MQTT-kommunikation, backend og app-visning.
-    </p>
-
-    <div class="section-title">Mit ansvar</div>
-    <ul>
-      <li>Opsætning af MQTT-broker med EMQX (Docker).</li>
-      <li>Design af datamodel for waste bins (id, placering, fyldningsniveau, alert-status).</li>
-      <li>Udvikling af .NET backend til at modtage, gemme og bearbejde sensor-data.</li>
-      <li>Android-visning / dashboard til at se fyldningsniveauer og alarmer.</li>
-      <li>Implementering af fake datagenerator til at simulere sensordata.</li>
-    </ul>
-
-    <div class="section-title">Tekniske pointer</div>
-    <ul>
-      <li>MQTT topics til hver skraldespand (bin) og håndtering af real-time data.</li>
-      <li>EMQX som broker, hostet via Docker.</li>
-      <li>.NET API der persisterer data (fx i Firestore/DB) og eksponerer endpoints.</li>
-      <li>Logik til at sætte alarmer, når en skraldespand er over en vis fyldningsprocent.</li>
-    </ul>
-
-    <img src="images/waste.png" alt="IoT Waste Management screenshot">
-
-    <div class="section-title">Video-demo</div>
-    <iframe
-      height="315"
-      src="https://www.youtube.com/embed/5vvruHKEwWw"
-      title="IoT Waste Management Demo"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- PROJEKT 3: Web- og frontendprojekter -->
-  <div class="project-card">
-    <h2>Web- og frontendprojekter</h2>
-    <div class="project-meta">
-      React · JavaScript · HTML · CSS
-    </div>
-
-    <p>
-      Ud over mine Android- og IoT-projekter har jeg arbejdet med forskellige
-      frontend-opgaver i React og ren JavaScript. Fokus har været på at lave
-      simple, men brugervenlige interfaces og forstå komponent-baseret udvikling.
-    </p>
-
-    <div class="section-title">Eksempler på opgaver</div>
-    <ul>
-      <li>Login-formular med validering og kald til backend API.</li>
-      <li>Små dashboards med oversigt over data fra API’er.</li>
-      <li>Responsivt layout med CSS Flexbox og Grid.</li>
-      <li>Refaktorering af eksisterende sider for at gøre koden mere overskuelig.</li>
-    </ul>
-
-    <!-- Hvis du har et billede af et webprojekt -->
-    <!-- Ellers kan du slette img-linjen -->
-  </div>
-
-</div>
-
-</body>
-</html>
+    Her kan du se de vigtigste projekter, jeg har lavet inden for Android, web, backend og IoT.
+    Jeg har både arbejdet med arkitektur, kode, UI/UX og integration til cloud-tjenes
