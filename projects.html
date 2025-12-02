@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Projekter – Helan Osman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { margin:0; background:#0f172a; color:#e5e7eb; font-family:Arial; }
+    header { background:#1e293b; padding:15px; }
+    nav a { color:#93c5fd; margin-right:15px; text-decoration:none; }
+    .container { max-width:900px; margin:20px auto; padding:20px; }
+    h1 { font-size:28px; }
+    .project-card {
+      background:#1e293b; padding:20px; border-radius:10px; margin-bottom:20px;
+    }
+    img, video {
+      width:100%; border-radius:10px; margin-top:10px;
+    }
+  </style>
+</head>
+<body>
 
+<header>
+  <nav>
+    <a href="index.html">Forside</a>
+    <a href="about.html">Om mig</a>
+    <a href="projects.html">Projekter</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <h1>Mine projekter</h1>
+
+  <!-- Projekt 1 -->
+  <div class="project-card">
+    <h2>TolkCare App</h2>
+    <p>Kotlin · Jetpack Compose · Firebase · Voice/Video Calls</p>
+
+    <img src="images/tolkcare.png" alt="TolkCare screenshot">
+
+    <!-- Hvis du har video -->
+    <!--
+    <video controls>
+      <source src="videos/tolkcare.mp4" type="video/mp4">
+    </video>
+    -->
+  </div>
+
+  <!-- Projekt 2 -->
+  <div class="project-card">
+    <h2>IoT Waste Management</h2>
+    <p>MQTT · EMQX · .NET · Firestore</p>
+
+    <img src="images/waste.png" alt="IoT Waste screenshot">
+
+    <!--
+    <video controls>
+      <source src="videos/waste.mp4" type="video/mp4">
+    </video>
+    -->
+  </div>
+
+</div>
+
+</body>
+</html>
