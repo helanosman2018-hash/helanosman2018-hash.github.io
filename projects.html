@@ -1,195 +1,29 @@
-<!DOCTYPE html>
-<html lang="da">
-<head>
-  <meta charset="UTF-8">
-  <title>Projekter – Helan Osman</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      background: #0f172a;
-      color: #e5e7eb;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
+<!-- ⭐ NYT PROJEKT – MODEL MANAGEMENT SYSTEM ⭐ -->
+<div class="project">
+  <h2>Model Management System – React Web App</h2>
+  <p class="meta">React · JavaScript · JWT Login · REST API · Docker Backend</p>
 
-    header {
-      background: #1e293b;
-      padding: 15px;
-      position: sticky;
-      top: 0;
-    }
-
-    nav a {
-      color: #93c5fd;
-      margin-right: 15px;
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 20px auto 40px;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 5px;
-    }
-
-    .project {
-      background: #111827;
-      border: 1px solid #334155;
-      border-radius: 10px;
-      padding: 15px;
-      margin-top: 20px;
-    }
-
-    .meta {
-      font-size: 14px;
-      color: #9ca3af;
-      font-style: italic;
-      margin-bottom: 8px;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid #334155;
-      margin: 10px 0;
-    }
-
-    iframe {
-      width: 100%;
-      height: 315px;
-      border-radius: 8px;
-      border: 1px solid #334155;
-      margin-top: 10px;
-    }
-
-    ul {
-      padding-left: 18px;
-      margin-top: 6px;
-      margin-bottom: 8px;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <nav>
-    <a href="index.html">Forside</a>
-    <a href="about.html">Om mig</a>
-    <a href="projects.html">Projekter</a>
-  </nav>
-</header>
-
-<div class="container">
-  <h1>Mine projekter</h1>
   <p>
-    Her kan du se de vigtigste projekter, jeg har lavet inden for Android, web, backend og IoT.
-    Jeg har både arbejdet med arkitektur, kode, UI/UX og integration til cloud-tjenester.
+    Dette projekt er en React-applikation udviklet til et modelbureau, hvor medarbejdere
+    kan administrere modeller, managere og jobopgaver. Systemet bruger en Docker-hostet backend,
+    JWT-login og et komplet REST API.
   </p>
 
-  <!-- TOLKCARE -->
-  <div class="project">
-    <h2>TolkCare App</h2>
-    <p class="meta">Android · Kotlin · Jetpack Compose · Firebase · Firestore · FCM · Agora</p>
+  <ul>
+    <li>Login med JWT og automatisk token-håndtering.</li>
+    <li>Roller: Manager og Model med forskellige rettigheder.</li>
+    <li>Manager kan oprette modeller, managere, jobs og tilføje modeller til jobs.</li>
+    <li>Model kan se sine jobs og registrere udgifter.</li>
+    <li>React SPA med dynamisk UI baseret på brugerens rolle.</li>
+    <li>Integration til Docker backend og REST endpoints.</li>
+  </ul>
 
-    <p>
-      TolkCare er en Android-app til booking af tolke. Brugere kan finde tolke, vælge dato og tidspunkt,
-      se deres bookinger og aflyse igen. Tolken kan registrere arbejdstider, se bookinger og få
-      notifikationer, når nye bookinger oprettes.
-    </p>
-
-    <ul>
-      <li>UI bygget med Jetpack Compose.</li>
-      <li>Firebase Authentication til login og brugerhåndtering.</li>
-      <li>Firestore til lagring af brugere, tolke, arbejdstider og bookinger.</li>
-      <li>Push-notifikationer med FCM til tolken ved nye bookinger.</li>
-      <li>Voice/video-calls mellem bruger og tolk via Agora SDK.</li>
-    </ul>
-
-    <img src="images/tolkcare.png" alt="TolkCare app flow">
-
-    <iframe
-      src="https://www.youtube.com/embed/83v2FE1zai0"
-      title="TolkCare Demo"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- WASTE -->
-  <div class="project">
-    <h2>IoT Waste Management</h2>
-    <p class="meta">MQTT · EMQX · .NET · Firestore · IoT</p>
-
-    <p>
-      IoT Waste Management er et smart affaldssystem, som overvåger fyldningsniveau i skraldespande.
-      Sensor-data sendes via MQTT til en EMQX-broker og videre til backend, hvor data gemmes
-      og bruges til at optimere tømmeruter.
-    </p>
-
-    <ul>
-      <li>Fake datagenerator der sender afstand og GPS-data via MQTT.</li>
-      <li>EMQX broker (Docker) til publish/subscribe af sensordata.</li>
-      <li>.NET backend der modtager og gemmer data.</li>
-      <li>Visualisering af fyldningsniveauer og alarmer.</li>
-    </ul>
-
-    <img src="images/waste.png" alt="IoT Waste Management diagram">
-
-    <iframe
-      src="https://www.youtube.com/embed/5vvruHKEwWw"
-      title="IoT Waste Management Demo"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-
-  <!-- ⭐ NYT PROJEKT – MODEL MANAGEMENT SYSTEM ⭐ -->
-  <div class="project">
-    <h2>Model Management System – React Web App</h2>
-    <p class="meta">React · JavaScript · JWT Login · REST API · Docker Backend</p>
-
-    <p>
-      Dette projekt er en React-applikation udviklet til et modelbureau, hvor medarbejdere
-      kan administrere modeller, managere og jobopgaver. Systemet bruger en Docker-hostet backend,
-      JWT-login og et komplet REST API.
-    </p>
-
-    <ul>
-      <li>Login med JWT og automatisk token-håndtering.</li>
-      <li>Roller: Manager og Model med forskellige rettigheder.</li>
-      <li>Manager kan oprette modeller, managere, jobs og tilføje modeller til jobs.</li>
-      <li>Model kan se sine jobs og registrere udgifter.</li>
-      <li>React SPA med dynamisk UI baseret på brugerens rolle.</li>
-      <li>Integration til Docker backend og REST endpoints.</li>
-    </ul>
-
- <iframe
-      src="https://youtu.be/embed/Sxojf8_JCac"
-      title="MODEL MANAGEMENT SYSTEM"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>  </div>
+  <iframe
+    src="https://www.youtube.com/embed/Sxojf8_JCac"
+    title="Model Management System Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
 
 </div>
-
-</body>
-</html>
